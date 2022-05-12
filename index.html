@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="assets/forrest-face.png">
+    <title>Forrest Gump</title>
+</head>
+
+<body>
+    <nav id="navigation">
+        <div class="wrapper">
+            <a class="logo" href="#home">
+                <img src="/assets/logo-forrest-gump.png" alt="Logo Forrest Gump">
+            </a>
+
+            <div class="menu">
+                <ul>
+                    <li><a class="active" onclick="closeMenu()" href="#home">Início</a></li>
+                    <li><a onclick="closeMenu()" href="#curiosidades">Curiosidades</a></li>
+                    <li><a onclick="closeMenu()" href="#about">Sobre</a></li>
+                    <li><a onclick="closeMenu()" href="#personagens">Personagens</a></li>
+                </ul>
+
+                <a class="button" onclick="closeMenu()" href="#contact">Saber Mais</a>
+
+                <ul class="social-links">
+                    <li><a href="https://instagram.com" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17.5 6.49997H17.51" stroke="#FFFAF1" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://facebook.com" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18 1.99997H15C13.6739 1.99997 12.4021 2.52675 11.4645 3.46444C10.5268 4.40212 10 5.67389 10 6.99997V9.99997H7V14H10V22H14V14H17L18 9.99997H14V6.99997C14 6.73475 14.1054 6.4804 14.2929 6.29286C14.4804 6.10533 14.7348 5.99997 15 5.99997H18V1.99997Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://youtube.com" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.5396 6.42C22.4208 5.94541 22.1789 5.51057 21.8382 5.15941C21.4976 4.80824 21.0703 4.55318 20.5996 4.42C18.8796 4 11.9996 4 11.9996 4C11.9996 4 5.1196 4 3.3996 4.46C2.92884 4.59318 2.50157 4.84824 2.16094 5.19941C1.82031 5.55057 1.57838 5.98541 1.4596 6.46C1.14481 8.20556 0.990831 9.97631 0.999595 11.75C0.988374 13.537 1.14236 15.3213 1.4596 17.08C1.59055 17.5398 1.8379 17.9581 2.17774 18.2945C2.51758 18.6308 2.93842 18.8738 3.3996 19C5.1196 19.46 11.9996 19.46 11.9996 19.46C11.9996 19.46 18.8796 19.46 20.5996 19C21.0703 18.8668 21.4976 18.6118 21.8382 18.2606C22.1789 17.9094 22.4208 17.4746 22.5396 17C22.852 15.2676 23.0059 13.5103 22.9996 11.75C23.0108 9.96295 22.8568 8.1787 22.5396 6.42Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.75 15.02L15.5 11.75L9.75 8.48001V15.02Z" stroke="#FFFAF1" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- false: o menu está fechado (acessibilidade)  -->
+            <button aria-expanded="false" aria-label="Abrir menu" onClick="openMenu()" class="open-menu">
+                <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 9H21" stroke="#7194c5" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M1 1H21" stroke="#7194c5" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M9 17L21 17" stroke="#7194c5" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <button aria-expanded="true" aria-label="fechar menu" onClick="closeMenu()" class="close-menu">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 10L10 30M10 10L30 30" stroke="#FFFAF1" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="wrapper">
+
+            <div class="col-a">
+                <header>
+                    <h4>QUEM É👇</h4>
+                    <h1>Forrest Gump</h1>
+                </header>
+
+                <div class="content">
+                    <p>O personagem mais autêntico e querido de todos os tempos.</p>
+                    <a href="#contact" class="button">
+                        <svg width="40px" height="40px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;"
+                            version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#ffffff">
+                            <g id="Layer_1" />
+                            <g id="Layer_2">
+                                <g>
+                                    <path
+                                        d="M26.5,16.7c-2.6,0-5.3,1-7.3,3c-2,2-3,4.6-3,7.3c0,2.6,1,5.3,3,7.3c2,2,4.6,3,7.3,3c2.6,0,5.3-1,7.3-3c2-2,3-4.6,3-7.3    c0-2.6-1-5.3-3-7.3C31.7,17.8,29.1,16.7,26.5,16.7z M26.5,35.3c-2.1,0-4.2-0.8-5.9-2.4c-1.6-1.6-2.4-3.7-2.4-5.9    c0-2.1,0.8-4.2,2.4-5.9c1.6-1.6,3.7-2.4,5.9-2.4c2.1,0,4.2,0.8,5.9,2.4h-6.9v10.8h7.7c-0.2,0.3-0.5,0.7-0.8,1    C30.7,34.5,28.6,35.3,26.5,35.3z M34.2,29.9h-6.8v-6.8h6.3c0.6,1.2,1,2.5,1,3.9C34.8,28,34.6,29,34.2,29.9z" />
+                                    <path
+                                        d="M38.5,21.2c-0.6-1.3-1.5-2.5-2.6-3.6c-2.6-2.6-6-3.9-9.5-3.9c-3.4,0-6.9,1.3-9.5,3.9c-2.6,2.6-3.9,6-3.9,9.5    c0,2.6,0.8,5.2,2.3,7.5L3.1,46.7l3.6,3.6l0.7-0.7L19,38.1c2.3,1.5,4.9,2.3,7.5,2.3c3.4,0,6.9-1.3,9.5-3.9c1.3-1.3,2.3-2.9,3-4.6    h21.9V21.2H38.5z M17.4,36.9L6.8,47.5L6,46.7l10.6-10.6L17.4,36.9z M34.5,35.1c-2.2,2.2-5.1,3.3-8.1,3.3c-2.9,0-5.8-1.1-8.1-3.3    c-2.2-2.2-3.3-5.1-3.3-8.1c0-2.9,1.1-5.8,3.3-8.1c2.2-2.2,5.1-3.3,8.1-3.3c2.9,0,5.8,1.1,8.1,3.3c2.2,2.2,3.3,5.1,3.3,8.1    C37.8,30,36.7,32.9,34.5,35.1z M58.9,29.9H39.5c0.2-1,0.3-1.9,0.3-2.9c0-1.3-0.2-2.6-0.6-3.9h19.6V29.9z" />
+                                    <rect height="2" width="12.2" x="38.9" y="33.3" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        Run, Forrest! Run!
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-b">
+                <img src="./assets/forrest-gump-sentado.png"
+                    alt="Imagem do Forrest sentado com uma caixa de chocolates no colo">
+            </div>
+
+            <div class="stats">
+                <!-- COLOCAR ENSINAMENTOS QUE APRENDI COM ELE -->
+                <div class="stat">
+                    <h3>The Life</h3>
+                    <p>is a box of chocolats. You never know what you’re gonna get.</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Stupid</h3>
+                    <p>is as stupid does.</p>
+                </div>
+                <div class="stat">
+                    <h3>My Mama</h3>
+                    <p>always said you’ve got to put the past behind you before you can move on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="curiosidades">
+        <div class="wrapper">
+            <header>
+                <h4>CURIOSIDADES</h4>
+                <h2>Sobre sua trajetória</h2>
+            </header>
+
+            <div class="cards">
+
+                <div class="card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#daf0ff" />
+                        <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#7194c5" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <h3>Deficiência intelectual (DI)</h3>
+                    <p>Forrest possuiu DI, mas isso não o impediu de conquistar milhares de coisas.</p>
+                    <br>
+
+                    <img src="/assets/forrest-sentado-escola-kid.jpg"
+                        alt="Cena em que forrest está sentado no banco da escola dele quando criança">
+                </div>
+
+                <div class="card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#daf0ff" />
+                        <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#7194c5" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <h3>John Lennon e Elvis Presley</h3>
+                    <p>Inspirou John a escrever a música "Imagine" e inspirou a dança de Elvis Presley.</p>
+                    <br>
+
+                    <img src="/assets/elvis-forest.jpg" alt="cena do forrest criança ensinando Elvis Presley a dançar">
+                </div>
+
+                <div class="card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#daf0ff" />
+                        <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#7194c5" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <h3>Ping-Pong</h3>
+                    <p>Participou do torneio de Ping-Pong na China em nome da reaproximação sino-americana.</p>
+                    <br>
+
+                    <img src="/assets/ping-pong-forrest.gif" alt="cena do forrest jogando ping-pong na China">
+                </div>
+
+                <div class="card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#daf0ff" />
+                        <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#7194c5" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <h3>Bubba Gump Shrimp Company</h3>
+                    <p>Criou uma CIA de camarões junto com o Tenente Dan em homenagem a seu falecido amigo de guerra
+                        Bubba.</p>
+                    <br>
+
+                    <img src="/assets/hello-forrest.gif" alt="cena do fosrrest acenando">
+                </div>
+
+                <div class="card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#daf0ff" />
+                        <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#7194c5" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <h3>Maratona</h3>
+                    <p>Correu 24,5 mil qulômetros em três anos, dois meses, 14 dias e 16 horas.</p>
+                    <br> <br>
+
+                    <img src="/assets/maratona-forrest.gif" alt="cena do forrest dizendo: I just felt like running">
+                </div>
+
+                <div class="card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#daf0ff" />
+                        <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#7194c5" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <h3>Guerra do Vietnã</h3>
+                    <p>Recebeu uma medalha de honra por salvar vários soldados americanos na Guerra do Vietnã. </p>
+                    <br>
+
+                    <img src="/assets/vietna-forrest.gif"
+                        alt="cena do forrest e outros soldados na água durante a guerra do Vietnã">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+
+        <div class="wrapper">
+
+            <div class="col-a">
+                <header>
+                    <h4>SOBRE ELE</h4>
+                    <h2>Entenda quem é de verdade Forrest Gump</h2>
+                </header>
+
+                <div class="content">
+                    <p>Forrest Gump (Greenbow, 6 de junho de 1944) é um personagem fictício americano, protagonista dos
+                        livros escritos por Winston Groom, Forrest Gump de 1986 e Gump & Co. de 1995, e do filme de 1994
+                        dirigido por Robert Zemeckis. </p> 
+                    <p>Tom Hanks interpretou o personagem no filme e ganhou um Oscar
+                        de melhor ator por sua atuação. Forrest Gump é considerado um dos melhores personagens do cinema
+                        de todos os tempos.</p> 
+
+                    <p>Forrest é um homem de QI baixo, que se torna um empresário, filantropo, veterano de guerra,
+                        mesa-tenista, pescador de camarão e jogador de futebol americano universitário. Ele testemunha e
+                        influencia vários acontecimentos importantes do século XX. Ao longo sua vida, mantém um amor
+                        sincero por sua amiga de infância Jennifer "Jenny" Curran, que eventualmente se torna sua
+                        esposa.</p>
+
+                    <img src="/assets/forrest-crianca.png" alt="kid forrest">
+                </div>
+            </div>
+
+            <div class="col-b">
+                <img src="./assets/tom-hanks-is-forrest.jpg" alt="capa filme">
+            </div>
+
+        </div>
+    </section>
+
+    <section id="personagens">
+        <div class="wrapper">
+            <header>
+                <h4>PRINCIPAIS</h4>
+                <h2>Personagens</h2>
+            </header>
+
+            <div id="carousel">
+                <figure id="spinner">
+                    <img src="/assets/FORREST-ROSTO.jpg" alt="Imagem do Forrest Gump">
+                    <img src="/assets/jenny.png" alt="Imagem da Jenny">
+                    <img src="/assets/dan.webp" alt="Imagem do tenente Dan">
+                    <img src="/assets/bubba.jpg" alt="Imagem do Forrest Gump">
+                    <img src="/assets/MRS-GUMP.jpg" alt="Imagem da Senhora Gump">
+                    <img src="/assets/jr.jpg" alt="Imagem do Forrest Gump JR">
+                </figure>
+            </div>
+            <span style="float:left" class="ss-icon1" onclick="galleryspin('-')">&lt;</span>
+            <span style="float:right" class="ss-icon2" onclick="galleryspin('')">&gt;</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="wrapper">
+
+            <div class="col-a">
+                <header>
+                    <h2>Saiba mais sobre o personagem mais querido de todos os tempos!</h2>
+                </header>
+
+                <div class="content">
+                    <ul>
+                        <a href="https://www.netflix.com/watch/60000724?trackId=14170287&tctx=1%2C0%2C24212061-d276-4e5c-a860-a09ac3483240-270347168%2C74eebe2f-d8ac-4180-a58a-3d235835863e_18606124X3XX1652210172228%2C74eebe2f-d8ac-4180-a58a-3d235835863e_ROOT%2C%2C%2C"
+                            target="_blank">
+                            <li>
+                                <svg width="27" height="26" viewBox="0 0 27 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="27" height="26" rx="2" fill="#7194C5" />
+                                    <rect x="1" y="1" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="22" y="1" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="1" y="6" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="22" y="6" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="1" y="11" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="22" y="11" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="1" y="16" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="22" y="16" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="1" y="21" width="4" height="4" rx="1" fill="white" />
+                                    <rect x="22" y="21" width="4" height="4" rx="1" fill="white" />
+                                </svg>
+                                Filme
+                            </li>
+                        </a>
+                        <a href="https://www.amazon.com.br/Forrest-Gump-Winston-Groom/dp/8576573474/ref=asc_df_8576573474/?tag=googleshopp00-20&linkCode=df0&hvadid=379733573200&hvpos=&hvnetw=g&hvrand=313140926964817964&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102431&hvtargid=pla-812244099268&psc=1"
+                            target="_blank">
+                            <li>
+                                <svg width="27" height="26" viewBox="0 0 27 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="27" height="26" rx="2" fill="#7194C5" />
+                                    <rect x="8" y="5" width="11" height="10" rx="1" fill="white" />
+                                    <rect x="1" width="2" height="26" rx="1" fill="white" />
+                                </svg>
+                                Livro
+                            </li>
+                        </a>
+                    </ul>
+
+                    <a class="button"
+                        href="https://www.google.com/search?q=forrest+gump&oq=forrest+gump&aqs=chrome.0.69i59l4j69i60l3.3119j0j9&sourceid=chrome&ie=UTF-8"
+                        target="_blank">
+                        <svg width="40px" height="40px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;"
+                            version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#ffffff">
+                            <g id="Layer_1" />
+                            <g id="Layer_2">
+                                <g>
+                                    <path
+                                        d="M26.5,16.7c-2.6,0-5.3,1-7.3,3c-2,2-3,4.6-3,7.3c0,2.6,1,5.3,3,7.3c2,2,4.6,3,7.3,3c2.6,0,5.3-1,7.3-3c2-2,3-4.6,3-7.3    c0-2.6-1-5.3-3-7.3C31.7,17.8,29.1,16.7,26.5,16.7z M26.5,35.3c-2.1,0-4.2-0.8-5.9-2.4c-1.6-1.6-2.4-3.7-2.4-5.9    c0-2.1,0.8-4.2,2.4-5.9c1.6-1.6,3.7-2.4,5.9-2.4c2.1,0,4.2,0.8,5.9,2.4h-6.9v10.8h7.7c-0.2,0.3-0.5,0.7-0.8,1    C30.7,34.5,28.6,35.3,26.5,35.3z M34.2,29.9h-6.8v-6.8h6.3c0.6,1.2,1,2.5,1,3.9C34.8,28,34.6,29,34.2,29.9z" />
+                                    <path
+                                        d="M38.5,21.2c-0.6-1.3-1.5-2.5-2.6-3.6c-2.6-2.6-6-3.9-9.5-3.9c-3.4,0-6.9,1.3-9.5,3.9c-2.6,2.6-3.9,6-3.9,9.5    c0,2.6,0.8,5.2,2.3,7.5L3.1,46.7l3.6,3.6l0.7-0.7L19,38.1c2.3,1.5,4.9,2.3,7.5,2.3c3.4,0,6.9-1.3,9.5-3.9c1.3-1.3,2.3-2.9,3-4.6    h21.9V21.2H38.5z M17.4,36.9L6.8,47.5L6,46.7l10.6-10.6L17.4,36.9z M34.5,35.1c-2.2,2.2-5.1,3.3-8.1,3.3c-2.9,0-5.8-1.1-8.1-3.3    c-2.2-2.2-3.3-5.1-3.3-8.1c0-2.9,1.1-5.8,3.3-8.1c2.2-2.2,5.1-3.3,8.1-3.3c2.9,0,5.8,1.1,8.1,3.3c2.2,2.2,3.3,5.1,3.3,8.1    C37.8,30,36.7,32.9,34.5,35.1z M58.9,29.9H39.5c0.2-1,0.3-1.9,0.3-2.9c0-1.3-0.2-2.6-0.6-3.9h19.6V29.9z" />
+                                    <rect height="2" width="12.2" x="38.9" y="33.3" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        Saber mais
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-b">
+                <img src="./assets/forrest-2.gif" alt="Forrest correndo no pátio da sua casa">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div class="col-a">
+                <a class="logo" href="#home">
+                    <img src="/assets/logo-forrest-gump.png" alt="logo forrest gump">
+                </a>
+
+                <p>
+                    ©2022 ForrestGump. <br>
+                    Feito por Bruna Fusiger.
+                </p>
+            </div>
+
+            <div class="col-b">
+                <ul class="social-links">
+                    <li><a href="https://www.instagram.com/fusiger_bru/?hl=pt" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17.5 6.49997H17.51" stroke="#FFFAF1" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100071559680697" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18 1.99997H15C13.6739 1.99997 12.4021 2.52675 11.4645 3.46444C10.5268 4.40212 10 5.67389 10 6.99997V9.99997H7V14H10V22H14V14H17L18 9.99997H14V6.99997C14 6.73475 14.1054 6.4804 14.2929 6.29286C14.4804 6.10533 14.7348 5.99997 15 5.99997H18V1.99997Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://github.com/BrunaFusiger" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.5396 6.42C22.4208 5.94541 22.1789 5.51057 21.8382 5.15941C21.4976 4.80824 21.0703 4.55318 20.5996 4.42C18.8796 4 11.9996 4 11.9996 4C11.9996 4 5.1196 4 3.3996 4.46C2.92884 4.59318 2.50157 4.84824 2.16094 5.19941C1.82031 5.55057 1.57838 5.98541 1.4596 6.46C1.14481 8.20556 0.990831 9.97631 0.999595 11.75C0.988374 13.537 1.14236 15.3213 1.4596 17.08C1.59055 17.5398 1.8379 17.9581 2.17774 18.2945C2.51758 18.6308 2.93842 18.8738 3.3996 19C5.1196 19.46 11.9996 19.46 11.9996 19.46C11.9996 19.46 18.8796 19.46 20.5996 19C21.0703 18.8668 21.4976 18.6118 21.8382 18.2606C22.1789 17.9094 22.4208 17.4746 22.5396 17C22.852 15.2676 23.0059 13.5103 22.9996 11.75C23.0108 9.96295 22.8568 8.1787 22.5396 6.42Z"
+                                    stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.75 15.02L15.5 11.75L9.75 8.48001V15.02Z" stroke="#FFFAF1" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <a id="backToTopButton" href="#home">
+        <!--class="show"= JS coloca-->
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" fill="#7194c5" />
+            <path d="M20 27V13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13 20L20 13L27 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+
+    </a>
+
+    <!-- efeito scroolreveal lib -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
